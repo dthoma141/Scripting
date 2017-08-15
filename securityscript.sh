@@ -1,7 +1,7 @@
 #!/bin/bash
 #!/bin/bash
 #tThis is a sscript to
-
+`
 1) Based on a user input parameter display the status of security - firewalld  and selinux on a Linux system
 
 2) Based on a user input parameter temporally enable or disable security - firewalld and selinux
@@ -17,7 +17,7 @@
     a) the script you built (standard .sh file is ok)
 
     b) word doc of screenshots notifying the user of the status and progress of  changes to  security services
-
+`
     while test $# -gt 0; do
             case "$1" in
                     -h|--help)
