@@ -14,13 +14,13 @@ case "$1" in
     case "$choice" in
     0)
         sestatus
-        setstatus 0
+        setenforce 0
         sestatus
         ;;
 
     1)
         sestatus
-        setstatus 1
+        setenforce 1
         sestatus
         ;;
     esac
