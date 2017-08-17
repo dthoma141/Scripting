@@ -60,12 +60,12 @@ case "$1" in
     read choice; echo 'please make a choice:'
     case "$choice" in
     0)
-        service firewalld stop
-        servoce forewalld status
+        systemctl stop firewalld
+        systemctl status firewalld
         ;;
 
     1)
-        service firewalld start
+        systemctl start firewalld
         service firewalld status
         ;;
     *)
@@ -78,12 +78,12 @@ case "$1" in
     # This currently will not survice reboot.
     echo '0 to set permissive selinux till reboot'
     echo '1 to set enforcing selinux till reboot'
-    systemctl firewalld status
+    systemctl status firewalld
     read choice; echo 'please make a choice:'
     case "$choice" in
     0)
         systemctl start firewalld
-        service firewalld start
+        systemctl status firewalld
         ;;
 
     1)
