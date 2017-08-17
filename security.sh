@@ -1,6 +1,12 @@
 #!/bin/bash
 #If I new how to create objects in linux i would.
 #I struggle with creating methods maybe that can be an extra assigment?
+
+
+
+# In here nothing is set to persist after reboot.   Its all set up for me to do that but I did not find the commands.
+#The way I know to do it is to go modiy the config files, I have a feeling im just missing some --perminit.
+# flag or somthing of that nature
 case "$1" in
 -h)
     # Nothing needs done
@@ -13,7 +19,7 @@ case "$1" in
     echo '0 to disable selinux till reboot'
     echo '1 to enable selinux till reboot'
     sestatus
-    read choice; echo 'please make a choice:'
+    echo 'please make a choice:';read choice;
     case "$choice" in
     0)
         setenforce 0
@@ -35,7 +41,7 @@ case "$1" in
     echo '0 to set permissive selinux till reboot'
     echo '1 to set enforcing selinux till reboot'
     getenforce
-    read choice; echo 'please make a choice:'
+    echo 'please make a choice:';read choice;
     case "$choice" in
     0)
         setenforce 0
@@ -57,7 +63,7 @@ case "$1" in
     echo '0 to disable selinux till reboot'
     echo '1 to set enforcing selinux till reboot'
     service firewalld status
-    read choice; echo 'please make a choice:'
+    echo 'please make a choice:';read choice;
     case "$choice" in
     0)
         systemctl stop firewalld
@@ -79,7 +85,7 @@ case "$1" in
     echo '0 to set permissive selinux till reboot'
     echo '1 to set enforcing selinux till reboot'
     systemctl status firewalld
-    read choice; echo 'please make a choice:'
+    echo 'please make a choice:';read choice;
     case "$choice" in
     0)
         systemctl start firewalld
